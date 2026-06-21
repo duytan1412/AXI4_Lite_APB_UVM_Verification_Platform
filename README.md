@@ -92,7 +92,8 @@ pwsh scripts/run_regression.ps1 -Simulator xcelium -Test bridge_random_rw_test
 CI/open-source check:
 
 ```bash
-verilator --lint-only -sv -Wno-fatal --top-module axi_lite_to_apb_bridge rtl/axi_lite_to_apb_bridge.sv`nverilator --lint-only -sv -Wno-fatal --top-module apb_gpio rtl/apb_gpio.sv
+verilator --lint-only -sv -Wno-fatal --top-module axi_lite_to_apb_bridge rtl/axi_lite_to_apb_bridge.sv
+verilator --lint-only -sv -Wno-fatal --top-module apb_gpio rtl/apb_gpio.sv
 ```
 
 ## Honest Status
@@ -109,4 +110,5 @@ verilator --lint-only -sv -Wno-fatal --top-module axi_lite_to_apb_bridge rtl/axi
 - How a scoreboard correlates AXI transactions with APB register state.
 - Which coverage bins prove address, direction, response, wait-state, and reset behavior.
 - Why the project separates CI lint evidence from full commercial UVM regression evidence.
+
 
