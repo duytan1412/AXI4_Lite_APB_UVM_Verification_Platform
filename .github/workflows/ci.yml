@@ -1,0 +1,15 @@
+name: RTL Lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  rtl-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Verilator
+        run: sudo apt-get update && sudo apt-get install -y verilator
+      - name: Lint synthesizable RTL
+        run: verilator --lint-only -sv rtl/axi_lite_to_apb_bridge.sv rtl/apb_gpio.sv

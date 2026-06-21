@@ -1,0 +1,13 @@
+# Coverage Summary
+
+## Implemented / Planned Coverpoints
+
+- AXI access direction: read, write.
+- Address offsets: `DATA`, `DIR`, `SET`, `CLR`, invalid.
+- Response class: OKAY, SLVERR.
+- APB wait states: 0, 1, 2+ cycles.
+- Reset during idle and reset before first transaction.
+
+## Current Claim
+
+Coverage model intent is documented in `tb/uvm/bridge_coverage` inside `bridge_uvm_pkg.sv`. This repository does not claim a numeric coverage percentage until full UVM regression is run on a simulator with coverage support and the report is archived.

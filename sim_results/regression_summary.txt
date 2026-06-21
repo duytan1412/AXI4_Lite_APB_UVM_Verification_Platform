@@ -1,0 +1,19 @@
+Regression Summary — AXI4-Lite to APB UVM Verification Platform
+
+Date: 2026-06-21
+Environment: Portfolio preparation workspace
+
+Available evidence:
+- RTL source present for bridge and APB GPIO peripheral.
+- UVM package skeleton present with env/test/scoreboard/coverage classes.
+- CI intended for RTL lint only through Verilator.
+
+Planned full regression tests:
+- bridge_smoke_test
+- bridge_random_rw_test
+- bridge_error_test
+- bridge_wait_state_test
+
+Current limitations:
+- Full UVM simulation was not executed on this machine because commercial UVM simulators are not installed.
+- Numeric functional coverage is not claimed.

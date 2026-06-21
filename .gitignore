@@ -1,0 +1,13 @@
+*.log
+*.vcd
+*.wlf
+*.fsdb
+*.vpd
+*.jou
+*.pb
+*.key
+simv*
+xcelium.d/
+INCA_libs/
+csrc/
+coverage/
