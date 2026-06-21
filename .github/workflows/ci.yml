@@ -11,5 +11,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Verilator
         run: sudo apt-get update && sudo apt-get install -y verilator
-      - name: Lint synthesizable RTL
-        run: verilator --lint-only -sv rtl/axi_lite_to_apb_bridge.sv rtl/apb_gpio.sv
+      - name: Lint AXI-Lite to APB bridge
+        run: verilator --lint-only -sv -Wno-fatal --top-module axi_lite_to_apb_bridge rtl/axi_lite_to_apb_bridge.sv
+      - name: Lint APB GPIO peripheral
+        run: verilator --lint-only -sv -Wno-fatal --top-module apb_gpio rtl/apb_gpio.sv

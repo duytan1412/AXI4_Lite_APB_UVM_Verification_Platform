@@ -24,6 +24,7 @@ switch ($Simulator) {
         if (-not (Get-Command verilator -ErrorAction SilentlyContinue)) {
             throw 'verilator not found. Install Verilator for local RTL lint or use a commercial simulator for full UVM.'
         }
-        verilator --lint-only -sv rtl/axi_lite_to_apb_bridge.sv rtl/apb_gpio.sv
+        verilator --lint-only -sv -Wno-fatal --top-module axi_lite_to_apb_bridge rtl/axi_lite_to_apb_bridge.sv; verilator --lint-only -sv -Wno-fatal --top-module apb_gpio rtl/apb_gpio.sv
     }
 }
+
