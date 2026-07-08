@@ -100,6 +100,9 @@ verilator --lint-only -sv -Wno-fatal --top-module apb_gpio rtl/apb_gpio.sv
 
 - RTL bridge/peripheral and UVM verification architecture are present.
 - vPlan, coverage intent, scoreboard intent, and regression commands are documented.
+- Cross-bus transaction trace is documented in [`docs/bridge_transaction_trace.md`](./docs/bridge_transaction_trace.md).
+- Latency and error-propagation checks are documented in [`docs/latency_error_propagation.md`](./docs/latency_error_propagation.md).
+- Evidence policy is documented in [`docs/evidence_policy.md`](./docs/evidence_policy.md).
 - CI is intentionally RTL-lint-only because open-source simulators do not fully cover UVM class-based verification.
 - Numeric coverage is not claimed until a real simulator coverage database is archived.
 
