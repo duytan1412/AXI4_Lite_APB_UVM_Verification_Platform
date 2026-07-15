@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-07-15T00:00:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="1f0bad79f015" name="Verification Architecture">
+    <mxGraphModel dx="1280" dy="540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1280" pageHeight="540" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="test" value="UVM Tests" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1f2937;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="70" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="seq" value="AXI/APB
+Sequences" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1f2937;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="70" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="drv" value="AXI-Lite
+Driver" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1f2937;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="70" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="dut" value="Bridge +
+APB GPIO DUT" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#1f2937;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="70" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="mon" value="AXI/APB
+Monitors" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1f2937;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="240" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="scb" value="Cross-bus
+Scoreboard" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1f2937;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="200" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="cov" value="Functional
+Coverage" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#1f2937;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="330" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="sva" value="Protocol
+Assertions" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;strokeWidth=2;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#1f2937;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="810" y="400" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="starts" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#375a7f;fontSize=12;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="test" target="seq">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="items" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#375a7f;fontSize=12;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="seq" target="drv">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="pins" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#375a7f;fontSize=12;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="drv" target="dut">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="observed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#375a7f;fontSize=12;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="dut" target="mon">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="transactions" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#375a7f;fontSize=12;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="mon" target="scb">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="samples" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#375a7f;fontSize=12;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="mon" target="cov">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=2;strokeColor=#375a7f;fontSize=12;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="dut" target="sva">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

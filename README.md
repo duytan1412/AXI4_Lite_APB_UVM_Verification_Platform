@@ -26,26 +26,15 @@ This is the capstone portfolio project tying together the smaller AXI4-Lite, APB
 
 ## Design Under Test
 
-```mermaid
-flowchart LR
-    AXI["AXI4-Lite master traffic"] --> BRIDGE["axi_lite_to_apb_bridge"]
-    BRIDGE --> APB["APB PSEL/PENABLE/PWRITE/PADDR/PWDATA"]
-    APB --> GPIO["apb_gpio peripheral"]
-    GPIO --> REG["4x 32-bit register map"]
-```
+![AXI4-Lite to APB bridge datapath](docs/axi_to_apb_datapath.png)
+
+Editable source: [`docs/axi_to_apb_datapath.drawio`](docs/axi_to_apb_datapath.drawio).
 
 ## Verification Architecture
 
-```mermaid
-flowchart TB
-    TEST["UVM tests"] --> SEQ["AXI/APB sequences"]
-    SEQ --> DRV["AXI-Lite driver"]
-    DRV --> DUT["Bridge + APB GPIO"]
-    DUT --> MON["AXI/APB monitors"]
-    MON --> SCB["Cross-bus scoreboard"]
-    MON --> COV["Functional coverage"]
-    DUT --> SVA["Protocol assertions"]
-```
+![AXI4-Lite to APB UVM verification architecture](docs/verification_architecture.png)
+
+Editable source: [`docs/verification_architecture.drawio`](docs/verification_architecture.drawio).
 
 ## Evidence Map
 
